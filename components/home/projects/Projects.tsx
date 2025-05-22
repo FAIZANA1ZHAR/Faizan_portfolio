@@ -20,7 +20,7 @@ const projects = [
   {
     title: "FinTech Dashboard",
     imgSrc: "/project-imgs/elancerz.png",
-    code: "https://github.com/faizanazhar",
+    code: "https://github.com/FAIZANA1ZHAR",
     projectLink: "https://fintech-dashboard.example.com",
     tech: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Material UI"],
     description:
@@ -42,7 +42,7 @@ const projects = [
   {
     title: "Enterprise CRM System",
     imgSrc: "/project-imgs/agency-iron-crm.png",
-    code: "https://github.com/faizanazhar",
+    code: "https://github.com/FAIZANA1ZHAR",
     projectLink: "https://enterprise-crm.example.com",
     tech: ["C#", ".NET Core", "React", "SQL Server", "Azure", "Redux"],
     description:
@@ -64,7 +64,7 @@ const projects = [
   {
     title: "Mobile Payment App",
     imgSrc: "/project-imgs/wh_app.png",
-    code: "https://github.com/faizanazhar",
+    code: "https://github.com/FAIZANA1ZHAR",
     projectLink: "https://play.google.com/store",
     tech: ["React Native", "Node.js", "Firebase", "Redux", "Payment Gateway Integration"],
     description:
@@ -86,7 +86,7 @@ const projects = [
   {
     title: "E-commerce Platform",
     imgSrc: "/project-imgs/worshiphim.png",
-    code: "https://github.com/faizanazhar",
+    code: "https://github.com/FAIZANA1ZHAR",
     projectLink: "https://ecommerce.example.com",
     tech: ["Vue.js", "TypeScript", "GraphQL", "PostgreSQL", "Docker", "AWS"],
     description:

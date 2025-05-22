@@ -6,6 +6,7 @@ import { Heading } from "../nav/Heading";
 import { About } from "./about/About";
 import { Projects } from "./projects/Projects";
 import { Experience } from "./experience/Experience";
+import { Certifications } from "./certifications/Certifications";
 import { Contact } from "./contact/Contact";
 
 export const Home = () => {
@@ -19,6 +20,7 @@ export const Home = () => {
           <About />
           <Projects />
           <Experience />
+          <Certifications />
           <Contact />
           <div
             style={{

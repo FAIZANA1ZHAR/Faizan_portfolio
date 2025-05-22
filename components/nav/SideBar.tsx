@@ -69,6 +69,16 @@ export const SideBar = () => {
           Experience
         </a>
         <a
+          href="#certifications"
+          onClick={() => {
+            setSelected("certifications");
+            document.getElementById("certifications")?.scrollIntoView();
+          }}
+          className={selected === "certifications" ? styles.selected : ""}
+        >
+          Certifications
+        </a>
+        <a
           href="#contact"
           onClick={() => {
             setSelected("contact");

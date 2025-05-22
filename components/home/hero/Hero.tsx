@@ -4,7 +4,7 @@ import { StandardButton } from "@/components/buttons/StandardButton";
 import { Reveal } from "@/components/utils/Reveal";
 import { DotGrid } from "./DotGrid";
 import styles from "./hero.module.scss";
-import Profile from "@/public/faizi.jpeg";
+import Profile from "@/public/faizanpic.jpg";
 
 export const Hero = () => {
   return (

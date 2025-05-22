@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700;900&display=swap');
+
 :root {
   font-size: 62.5%;
 
@@ -19,6 +21,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   padding: 0;
   margin: 0;
 }

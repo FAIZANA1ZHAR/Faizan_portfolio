@@ -1,3 +1,4 @@
+import React from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Header from '@/components/layout/header';
@@ -95,7 +96,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               if (paragraph.startsWith('#')) {
                 const level = paragraph.match(/^#+/)?.[0]?.length || 1;
                 const text = paragraph.replace(/^#+\s*/, '');
-                const Tag = `h${Math.min(level, 6)}` as keyof JSX.IntrinsicElements;
+                const Tag = `h${Math.min(level, 6)}` as keyof React.JSX.IntrinsicElements;
                 return (
                   <Tag key={index} className="font-bold text-gray-900 dark:text-white mt-8 mb-4">
                     {text}

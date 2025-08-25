@@ -10,7 +10,7 @@ export const personalInfo = {
     linkedin: "https://www.linkedin.com/in/faizan-azhar-25a49b149/", // Updated with your actual LinkedIn
     github: "https://github.com/FAIZANA1ZHAR", // Updated with your actual GitHub
     twitter: "https://twitter.com/faizanazhar", // Optional - update with your actual Twitter URL
-    // portfolio: "https://faizanazhar.dev", // Portfolio website - commented out
-    // upwork: "https://www.upwork.com/freelancers/~01234567890abcdef" // Fiverr/Upwork profile - commented out
+    portfolio: "", // Portfolio website - will be the current site
+    upwork: "" // Fiverr/Upwork profile - optional
   }
 };

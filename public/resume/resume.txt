@@ -1,0 +1,55 @@
+FAIZAN AZHAR
++923435391151 | faziazhar1@gmail.com | GitHub:https://github.com/FAIZANA1ZHAR | https://www.linkedin.com/in/faizan-azhar-25a49b149/
+PROFILE
+I am a dedicated software developer who loves creating high-quality products in competitive environments. I'm committed
+to innovation and always seeking new challenges and opportunities.
+EXPERIENCE
+Senior Software Engineer (Full Stack) & Technical Consultant - Tekenable ltd Remote, Ireland Feb 2022 - Present
+• Successfully delivered and led the development and support for EPassport ERA: Understanding the requirements
+from the client, creating user stories, and presenting weekly demos of the product to clients.
+• Develop and manage Power Apps solutions pipelines for different environments
+• Develop custom connectors in C# for Power Apps
+• Develop the media stream service for ERA.
+• Develop the third-party endpoints for media broadcasting for France and the UK.
+• Develop a horse pedigree for 5 levels using PCF in React with React Query.
+• Deploy CI/CD pipelines for Azure Functions and PCF
+• Develop a POC (chat with docs ) that leads to a successful client
+(Azure Open AI, Azure Document Intelligence, Azure Cognitive Search, React, Fast Api,.Net,.NetCore, Python, Angular,
+Power Apps, React, Azure, DevOps, Docker)
+Full-Stack Developer - AlphaSquad Onsite, Islamabad Jan 2020 - Sep 2020
+Developed and deployed a major Online Education System for a Saudi client project. Worked with modern technologies.
+(Node.js, React, React Native, Serverless, GraphQL, Firebase)
+Full-Stack Developer – Code Breakers Remote, USA Oct 2020 – Jan 2022
+• Develop the online hotel management system.
+• Develop the online taxi system.
+(Node.js, React, React Native, Google Maps, Firebase)
+Open-Source Contribution
+SQL Query Conversion to Sentence using Hugging Face
+Built a custom control for Dynamics 365 that converts SQL queries into natural language using the Hugging Face model.
+(Dynamics 365 Pcf Control React, FastAPI, Hugging Face, Docker).
+CERTIFICATIONS
+DP-100: Azure Data Scientist Associate – Microsoft (Jan 2025 – Present)
+AI-102: Designing and Implementing a Microsoft Azure AI Solution – Microsoft (Jun 2023 – Present)
+AI-900: Microsoft Azure AI Fundamentals – Microsoft (Jul 2023 – Present)
+PL-900: Microsoft Power Platform Fundamentals – Microsoft (Aug 2023 – Present) AZ900: Microsoft Azure Fundamentals – Microsoft (Jul 2023 – Present)
+Internship
+National Centre for Cyber Security, Air University, Islamabad May 2020 – Jul 2020
+Analyzed malware using IDA Pro and Ghidra to examine and understand malicious executable files.
+(IDA Pro, Ghidra, Malware Analysis)
+Machine Learning – Air University Center of Smart Data Islamabad Sep 2019 – Jul 2020
+Trained machine learning models to identify drug-drug interactions (DDIs) in biomedical texts. Achieved an F1-score of 73%,
+comparable to leading research in the domain.
+(Python, ML, NLP)
+EDUCATION
+Air University Islamabad. 2017 – 2020
+Bachelor of Engineering in Software Engineering CGPA: 3.01
+Final Year Project
+Telecommute Churn Prediction Model Islamabad4 Jan 2020
+• Developed using Python and Django with 95% accuracy in predicting churn. Designed the front-end interface using HTML
+and CSS. (Python, Django, HTML, CSS)
+Academic Projects
+• Built a scientific calculator in C++.
+• Developed an eBay web scraper using C#.
+• Created Handy Crew and Hotel Management System using the MEAN stack.
+• Implemented a heart attack prediction model in Python. Created a customer churn prediction model in Python.
+• Twitter (X) Sentiment analysis R

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 import { personalInfo } from '../../data/personal-info';
 import SocialLinks from '../ui/SocialLinks';
 
@@ -15,17 +16,40 @@ const Contact: React.FC = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // EmailJS configuration
+  const SERVICE_ID = 'service_jhwo304';
+  const TEMPLATE_ID = 'template_m5xcrsi';
+  const PUBLIC_KEY = 'ZQSQ8TZb-DnqMuZ6L';
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert('Thank you for your message! I\'ll get back to you soon.');
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init(PUBLIC_KEY);
+      
+      // Send form using EmailJS sendForm method
+      const result = await emailjs.sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        e.currentTarget, // Pass the form element directly
+        PUBLIC_KEY
+      );
+
+      console.log('Email sent successfully:', result);
+      setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 2000);
+      
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -151,7 +175,11 @@ const Contact: React.FC = () => {
             className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20 order-1 lg:order-2"
           >
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 lg:hidden">Send Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <form id="contact-form" onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              {/* Hidden fields for EmailJS */}
+              <input type="hidden" name="to_email" value="faziazhar1@gmail.com" />
+              <input type="hidden" name="to_name" value="Faizan Azhar" />
+              
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label htmlFor="name" className="block text-white font-medium mb-2 text-sm sm:text-base">
@@ -236,6 +264,27 @@ const Contact: React.FC = () => {
                   </div>
                 )}
               </motion.button>
+
+              {/* Success/Error Messages */}
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-green-500/20 border border-green-500/30 rounded-lg p-4 text-green-300"
+                >
+                  <p className="text-sm sm:text-base">✅ Thank you for your message! I&apos;ll get back to you soon.</p>
+                </motion.div>
+              )}
+
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-red-500/20 border border-red-500/30 rounded-lg p-4 text-red-300"
+                >
+                  <p className="text-sm sm:text-base">❌ Failed to send message. Please try again or contact me directly via email.</p>
+                </motion.div>
+              )}
 
               {/* Form Footer */}
               <p className="text-xs sm:text-sm text-gray-400 text-center mt-4">

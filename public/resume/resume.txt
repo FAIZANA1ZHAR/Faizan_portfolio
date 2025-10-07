@@ -28,10 +28,11 @@ SQL Query Conversion to Sentence using Hugging Face
 Built a custom control for Dynamics 365 that converts SQL queries into natural language using the Hugging Face model.
 (Dynamics 365 Pcf Control React, FastAPI, Hugging Face, Docker).
 CERTIFICATIONS
+PL-200: Power Platform Functional Consultant Associate - Microsoft (Oct 2025 -Oct -2026)
 DP-100: Azure Data Scientist Associate – Microsoft (Jan 2025 – Present)
 AI-102: Designing and Implementing a Microsoft Azure AI Solution – Microsoft (Jun 2023 – Present)
 AI-900: Microsoft Azure AI Fundamentals – Microsoft (Jul 2023 – Present)
-PL-900: Microsoft Power Platform Fundamentals – Microsoft (Aug 2023 – Present) AZ900: Microsoft Azure Fundamentals – Microsoft (Jul 2023 – Present)
+PL-900: Microsoft Power Platform Fundamentals – Microsoft (Aug 2023 – Present) AZ-900: Microsoft Azure Fundamentals – Microsoft (Jul 2023 – Present)
 Internship
 National Centre for Cyber Security, Air University, Islamabad May 2020 – Jul 2020
 Analyzed malware using IDA Pro and Ghidra to examine and understand malicious executable files.

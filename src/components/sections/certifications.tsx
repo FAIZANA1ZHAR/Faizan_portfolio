@@ -7,6 +7,18 @@ import Link from 'next/link';
 
 const certifications = [
   {
+    title: 'PL-200: Power Platform Functional Consultant Associate',
+    issuer: 'Microsoft',
+    date: 'Oct 2025',
+    status: 'Current',
+    level: 'Associate',
+    description: 'Advanced certification for designing, developing, and configuring Power Platform solutions',
+    skills: ['Power Apps', 'Power Automate', 'Power BI', 'Dataverse', 'Power Platform Administration', 'Business Process Flows'],
+    badge: '/badges/pl-200.png',
+    verifyLink: 'https://learn.microsoft.com/en-us/certifications/power-platform-functional-consultant-associate/',
+    color: 'from-purple-600 to-indigo-700'
+  },
+  {
     title: 'DP-100: Azure Data Scientist Associate',
     issuer: 'Microsoft',
     date: 'Jan 2025',

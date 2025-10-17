@@ -17,13 +17,54 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+      className="group relative ai-card rounded-2xl overflow-hidden transform hover:-translate-y-3"
     >
       {/* Project Image */}
       <div className="relative h-64 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
-        <div className="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold">
-          {project.title} Preview
+        {/* Animated background pattern */}
+        <div className="absolute inset-0 opacity-30"
+             style={{
+               backgroundImage: `
+                 linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                 linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                 linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%),
+                 linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%)
+               `,
+               backgroundSize: '20px 20px',
+               backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
+               animation: 'grid-move 20s linear infinite'
+             }}>
+        </div>
+        
+        {/* Holographic overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-transparent to-purple-500/20 group-hover:opacity-80 transition-opacity duration-500 animate-pulse"></div>
+        
+        {/* Neural network visualization */}
+        <svg className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-40 transition-opacity duration-500">
+          <defs>
+            <linearGradient id={`neuralGradient${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#06b6d4"/>
+              <stop offset="50%" stopColor="#8b5cf6"/>
+              <stop offset="100%" stopColor="#ec4899"/>
+            </linearGradient>
+          </defs>
+          <circle cx="20%" cy="30%" r="3" fill={`url(#neuralGradient${index})`} className="animate-ping"/>
+          <circle cx="80%" cy="30%" r="3" fill={`url(#neuralGradient${index})`} className="animate-ping" style={{animationDelay: '0.5s'}}/>
+          <circle cx="50%" cy="70%" r="3" fill={`url(#neuralGradient${index})`} className="animate-ping" style={{animationDelay: '1s'}}/>
+          <line x1="20%" y1="30%" x2="80%" y2="30%" stroke={`url(#neuralGradient${index})`} strokeWidth="1" opacity="0.6">
+            <animate attributeName="stroke-dasharray" values="0,300;300,0;0,300" dur="3s" repeatCount="indefinite"/>
+          </line>
+          <line x1="20%" y1="30%" x2="50%" y2="70%" stroke={`url(#neuralGradient${index})`} strokeWidth="1" opacity="0.6">
+            <animate attributeName="stroke-dasharray" values="0,300;300,0;0,300" dur="4s" repeatCount="indefinite"/>
+          </line>
+          <line x1="80%" y1="30%" x2="50%" y2="70%" stroke={`url(#neuralGradient${index})`} strokeWidth="1" opacity="0.6">
+            <animate attributeName="stroke-dasharray" values="0,300;300,0;0,300" dur="3.5s" repeatCount="indefinite"/>
+          </line>
+        </svg>
+        
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
+        <div className="absolute inset-0 flex items-center justify-center text-white text-lg font-semibold relative z-10">
+          <span className="group-hover:text-cyan-200 transition-colors duration-300">{project.title}</span>
         </div>
         
         {/* Overlay with Actions */}

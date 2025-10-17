@@ -122,10 +122,72 @@ export function Certifications() {
               initial={{ y: 20, opacity: 0 }}
               animate={inView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300 group relative overflow-hidden"
+              className="bg-card/80 backdrop-blur-sm border border-transparent rounded-xl p-6 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden"
+              style={{
+                background: `linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)`,
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255,255,255,0.2)'
+              }}
             >
-              {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${cert.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+              {/* Animated AI Grid Background */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0" 
+                     style={{
+                       backgroundImage: `
+                         linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)
+                       `,
+                       backgroundSize: '20px 20px',
+                       animation: 'grid-move 10s linear infinite'
+                     }}>
+                </div>
+              </div>
+              
+              {/* Holographic Border Effect */}
+              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                   style={{
+                     background: `linear-gradient(45deg, 
+                       rgba(139, 92, 246, 0.3) 0%, 
+                       rgba(59, 130, 246, 0.3) 25%, 
+                       rgba(168, 85, 247, 0.3) 50%, 
+                       rgba(236, 72, 153, 0.3) 75%, 
+                       rgba(139, 92, 246, 0.3) 100%)`,
+                     backgroundSize: '400% 400%',
+                     animation: 'gradient-shift 4s ease infinite',
+                     mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                     maskComposite: 'xor',
+                     padding: '2px'
+                   }}>
+              </div>
+              
+              {/* Floating Particles */}
+              <div className="absolute inset-0 overflow-hidden rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute top-2 left-2 w-1 h-1 bg-blue-400 rounded-full animate-ping"></div>
+                <div className="absolute top-4 right-8 w-1 h-1 bg-purple-400 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+                <div className="absolute bottom-4 left-6 w-1 h-1 bg-pink-400 rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
+              </div>
+              
+              {/* Glowing Corner Effect */}
+              <div className="absolute top-0 right-0 w-20 h-20 opacity-0 group-hover:opacity-60 transition-opacity duration-500">
+                <div className="absolute inset-0 bg-gradient-to-bl from-cyan-400 via-blue-500 to-transparent rounded-xl blur-xl"></div>
+              </div>
+              
+              {/* Neural Network Lines */}
+              <svg className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-20 transition-opacity duration-500" style={{zIndex: 1}}>
+                <line x1="0" y1="50%" x2="100%" y2="20%" stroke="url(#gradient)" strokeWidth="0.5">
+                  <animate attributeName="stroke-dasharray" values="0,1000;1000,0;0,1000" dur="4s" repeatCount="indefinite"/>
+                </line>
+                <line x1="20%" y1="0" x2="80%" y2="100%" stroke="url(#gradient)" strokeWidth="0.5">
+                  <animate attributeName="stroke-dasharray" values="0,1000;1000,0;0,1000" dur="3s" repeatCount="indefinite"/>
+                </line>
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#8b5cf6"/>
+                    <stop offset="50%" stopColor="#3b82f6"/>
+                    <stop offset="100%" stopColor="#ec4899"/>
+                  </linearGradient>
+                </defs>
+              </svg>
               
               <div className="relative z-10 space-y-4">
                 {/* Header */}
@@ -235,11 +297,11 @@ export function Certifications() {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">5+</div>
+              <div className="text-3xl font-bold text-primary">6</div>
               <div className="text-muted-foreground">Microsoft Certifications</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">2</div>
+              <div className="text-3xl font-bold text-primary">3</div>
               <div className="text-muted-foreground">Associate Level</div>
             </div>
             <div className="space-y-2">

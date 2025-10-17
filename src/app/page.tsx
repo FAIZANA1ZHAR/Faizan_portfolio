@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Header from '@/components/layout/header';
 import Hero from '@/components/sections/hero';
+import VideoIntroduction from '@/components/sections/video-introduction';
 import About from '@/components/sections/about';
 import { TechStack } from '@/components/sections/tech-stack';
 import Experience from '@/components/sections/experience';
@@ -23,6 +24,7 @@ export default function Home() {
       <Header />
       <main className="min-h-screen">
         <Hero />
+        <VideoIntroduction />
         <About />
         <TechStack />
         <Experience />

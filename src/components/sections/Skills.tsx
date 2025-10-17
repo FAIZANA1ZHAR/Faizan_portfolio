@@ -11,21 +11,51 @@ const Skills: React.FC = () => {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="mb-4"
+      className="mb-4 group relative z-10"
     >
       <div className="flex justify-between items-center mb-2">
-        <span className="text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
-        <span className="text-blue-600 dark:text-blue-400 text-sm font-bold">{skill.level * 20}%</span>
+        <span className="text-gray-700 dark:text-gray-300 font-medium group-hover:text-cyan-400 transition-colors duration-300">{skill.name}</span>
+        <span className="text-blue-600 dark:text-blue-400 text-sm font-bold group-hover:text-cyan-300 transition-colors duration-300">{skill.level * 20}%</span>
       </div>
-      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+      <div className="w-full bg-gray-200/30 dark:bg-gray-700/30 rounded-full h-3 overflow-hidden border border-white/10 backdrop-blur-sm relative">
+        {/* Background grid pattern */}
+        <div className="absolute inset-0 opacity-20"
+             style={{
+               backgroundImage: `
+                 linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px),
+                 linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px)
+               `,
+               backgroundSize: '8px 8px'
+             }}>
+        </div>
+        
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${skill.level * 20}%` }}
-          transition={{ duration: 1, delay: index * 0.1 }}
+          transition={{ duration: 1.5, delay: index * 0.1, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full relative"
+          className="h-full relative overflow-hidden rounded-full"
+          style={{
+            background: `linear-gradient(90deg, 
+              rgba(59, 130, 246, 0.8) 0%, 
+              rgba(139, 92, 246, 0.9) 25%, 
+              rgba(168, 85, 247, 0.9) 50%, 
+              rgba(236, 72, 153, 0.8) 75%, 
+              rgba(59, 130, 246, 0.8) 100%)`,
+            backgroundSize: '200% 100%',
+            animation: 'gradient-shift 3s ease infinite'
+          }}
         >
-          <div className="absolute inset-0 bg-white/20 rounded-full animate-pulse"></div>
+          {/* Data flow animation */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[400%] transition-transform duration-1000 ease-out"></div>
+          
+          {/* Neural network nodes */}
+          <div className="absolute top-1/2 left-2 w-1 h-1 bg-cyan-300 rounded-full transform -translate-y-1/2 animate-ping"></div>
+          <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-blue-300 rounded-full transform -translate-y-1/2 -translate-x-1/2 animate-ping" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute top-1/2 right-2 w-1 h-1 bg-purple-300 rounded-full transform -translate-y-1/2 animate-ping" style={{animationDelay: '1s'}}></div>
+          
+          {/* Holographic overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 via-transparent to-purple-400/20 animate-pulse"></div>
         </motion.div>
       </div>
     </motion.div>
@@ -58,15 +88,34 @@ const Skills: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-700"
+              className="ai-card group rounded-2xl p-8 relative overflow-hidden"
             >
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
-                  <span className="text-white font-bold text-lg">
+              <div className="flex items-center mb-6 relative z-10">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 rounded-xl flex items-center justify-center mr-4 relative overflow-hidden group-hover:animate-pulse">
+                  {/* Holographic effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 opacity-0 group-hover:opacity-80 transition-opacity duration-300 animate-pulse"></div>
+                  {/* Neural network pattern */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
+                    <svg className="w-full h-full" viewBox="0 0 48 48">
+                      <circle cx="12" cy="12" r="2" fill="currentColor" className="text-cyan-300 animate-ping">
+                        <animate attributeName="r" values="1;3;1" dur="2s" repeatCount="indefinite"/>
+                      </circle>
+                      <circle cx="36" cy="12" r="2" fill="currentColor" className="text-blue-300 animate-ping" style={{animationDelay: '0.5s'}}>
+                        <animate attributeName="r" values="1;3;1" dur="2s" repeatCount="indefinite"/>
+                      </circle>
+                      <circle cx="24" cy="36" r="2" fill="currentColor" className="text-purple-300 animate-ping" style={{animationDelay: '1s'}}>
+                        <animate attributeName="r" values="1;3;1" dur="2s" repeatCount="indefinite"/>
+                      </circle>
+                      <line x1="12" y1="12" x2="36" y2="12" stroke="currentColor" strokeWidth="0.5" className="text-white" opacity="0.6"/>
+                      <line x1="12" y1="12" x2="24" y2="36" stroke="currentColor" strokeWidth="0.5" className="text-white" opacity="0.6"/>
+                      <line x1="36" y1="12" x2="24" y2="36" stroke="currentColor" strokeWidth="0.5" className="text-white" opacity="0.6"/>
+                    </svg>
+                  </div>
+                  <span className="text-white font-bold text-lg relative z-10 group-hover:text-cyan-200 transition-colors duration-300">
                     {category.category.charAt(0)}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:via-blue-500 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">
                   {category.category}
                 </h3>
               </div>

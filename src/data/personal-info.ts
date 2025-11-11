@@ -5,7 +5,7 @@ export const personalInfo = {
   email: "faziazhar1@gmail.com",
   phone: "+923435391151", // Add your actual phone number
   summary: "Experienced Senior Software Engineer with over 7 years in web development and architecture, specializing in front-end technologies including React, Vue, and Next.js. Proven track record of leading teams and delivering complex projects across fintech, e-commerce, and healthcare sectors.",
-  resumeUrl: "/resume/Faizan_Azhar_Resume.pdf",
+  resumeUrl: "/resume/Faizan_Azhar_Resume_Software_Eng.pdf",
   socialLinks: {
     linkedin: "https://www.linkedin.com/in/faizan-azhar-25a49b149/", // Updated with your actual LinkedIn
     github: "https://github.com/FAIZANA1ZHAR", // Updated with your actual GitHub

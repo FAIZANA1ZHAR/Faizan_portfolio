@@ -1,62 +1,22 @@
-export interface ExperienceItem {
-  company: string;
-  position: string;
-  location: string;
-  remote: boolean;
-  period: string;
-  description: string;
-  achievements: string[];
-  technologies: string[];
-}
+export type Experience = {
+  id: string; startDate: string; endDate: string; location: string; role: string; company: string;
+  workArea?: string; summary?: string; responsibilities: string[]; technologies: string[]; current?: boolean;
+};
 
-export const experiences: ExperienceItem[] = [
+export const careerTimeline: Experience[] = [
   {
-    company: "Tekenable Ltd",
-    position: "Senior Software Engineer (Full Stack) & Technical Consultant",
-    location: "Remote, Ireland",
-    remote: true,
-    period: "Feb 2022 - Present",
-    description: "Leading enterprise software development and delivering innovative Azure-based solutions for international clients. Successfully managing the complete software development lifecycle from requirements gathering to deployment.",
-    achievements: [
-      "Successfully delivered and led EPassport ERA system for international clients with weekly client demos",
-      "Developed AI-powered 'chat with docs' POC that converted to successful client acquisition",
-      "Architected and deployed CI/CD pipelines for Azure Functions and PCF controls",
-      "Created custom Power Apps connectors in C# and media streaming services",
-      "Built 5-level horse pedigree system using PCF in React with React Query",
-      "Developed third-party endpoints for media broadcasting for France and UK markets"
+    id: 'tekenable', startDate: 'Feb 2022', endDate: 'Present', location: 'Remote, Ireland', role: 'Senior Technical & Functional Consultant', company: 'Tekenable Ltd', workArea: 'Azure, AI & Power Platform', current: true,
+    summary: 'End-to-end enterprise consulting: discovery and architecture through to secure production deployment.',
+    responsibilities: [
+      'Designed enterprise Azure infrastructure from landing zones to secured application and AI workloads across multiple client projects.',
+      'Established reusable Bicep / AVM deployments and a company-standard security analysis pipeline with SonarQube and Mend.',
+      'Delivered document AI, Copilot Studio agents, and multi-agent proofs of concept with grounded enterprise knowledge.',
+      'Led discovery workshops, Power Platform delivery, integrations, and automated ALM across environments.',
+      'Configured private endpoints, Private DNS, least-privilege service connections, and multi-region deployments in North Europe and Sweden Central.',
+      'Built custom C# connectors, Azure Functions, and broadcasting endpoints for France and UK markets.',
     ],
-    technologies: ["Azure OpenAI", "Azure Document Intelligence", "Azure Cognitive Search", "React", "FastAPI", ".NET", ".NET Core", "Python", "Angular", "Power Apps", "Azure", "DevOps", "Docker", "C#"]
+    technologies: ['Azure', 'AI Foundry', 'Bicep / AVM', 'Azure DevOps', 'SonarQube', 'Mend', 'Copilot Studio', 'Dataverse', 'PCF', 'Python', '.NET', 'React', 'Docker'],
   },
-  {
-    company: "Code Breakers",
-    position: "Full-Stack Developer",
-    location: "Remote, USA",
-    remote: true,
-    period: "Oct 2020 - Jan 2022",
-    description: "Developed comprehensive web applications for hospitality and transportation sectors, focusing on scalable solutions and modern architecture patterns.",
-    achievements: [
-      "Developed complete online hotel management system with booking and payment integration",
-      "Built online taxi system with real-time GPS tracking and route optimization",
-      "Implemented scalable backend architecture using Node.js and modern databases",
-      "Integrated Google Maps API for location-based services",
-      "Delivered mobile-responsive applications for better user experience"
-    ],
-    technologies: ["Node.js", "React", "React Native", "Google Maps API", "Firebase", "JavaScript", "REST APIs"]
-  },
-  {
-    company: "AlphaSquad",
-    position: "Full-Stack Developer",
-    location: "Onsite, Islamabad",
-    remote: false,
-    period: "Jan 2020 - Sep 2020",
-    description: "Developed and deployed major online education system for Saudi Arabian client, implementing modern web technologies and serverless architecture.",
-    achievements: [
-      "Successfully delivered major online education platform for international Saudi client",
-      "Implemented serverless architecture for scalability and cost optimization",
-      "Built interactive learning modules with real-time features",
-      "Integrated GraphQL for efficient data fetching and management",
-      "Developed mobile applications for cross-platform accessibility"
-    ],
-    technologies: ["Node.js", "React", "React Native", "Serverless", "GraphQL", "Firebase", "JavaScript"]
-  }
+  { id: 'code-breakers', startDate: 'Oct 2020', endDate: 'Jan 2022', location: 'Remote, USA', role: 'Full-Stack Developer', company: 'Code Breakers', workArea: 'Hospitality & transportation', summary: 'Built hotel management with real-time bookings and payments, and a taxi dispatch platform with GPS tracking, driver matching, and Google Maps integration.', responsibilities: ['Built an online hotel management system with real-time booking, room inventory, and payment integration.', 'Developed online taxi dispatch with live GPS tracking, driver-passenger matching, and Google Maps integration.'], technologies: ['Node.js', 'React', 'React Native', 'Google Maps', 'Firebase'] },
+  { id: 'alphasquad', startDate: 'Jan 2020', endDate: 'Sep 2020', location: 'Islamabad', role: 'Full-Stack Developer', company: 'AlphaSquad', workArea: 'Education & serverless applications', summary: 'Delivered an online education system for a Saudi client, covering course management, live sessions, and authentication on a serverless architecture.', responsibilities: ['Designed and deployed a full-scale Online Education System with course management, live sessions, and authentication.', 'Implemented serverless architecture and GraphQL-backed data integration.'], technologies: ['Node.js', 'React', 'React Native', 'GraphQL', 'Serverless', 'Firebase'] },
 ];

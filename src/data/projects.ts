@@ -1,73 +1,12 @@
-export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  demoUrl?: string;
-  codeUrl?: string;
-  featured: boolean;
-}
+export type Project = {
+  id: string; number: string; title: string; category: string; summary: string; challenge?: string;
+  approach?: string; details: string[]; technologies: string[]; accent: 'emerald' | 'cyan' | 'coral' | 'blue';
+  liveUrl?: string; githubUrl?: string;
+};
 
-export const projects: Project[] = [
-  {
-    id: "meetmaps",
-    title: "MeetMaps Event Platform",
-    description: "Event management platform built with micro-frontend architecture, allowing seamless integration of multiple frontend applications. Features real-time event tracking, user management, and advanced analytics.",
-    image: "/projects/meetmaps.jpg",
-    technologies: ["React", "TypeScript", "Micro-frontend", "Redux", "Node.js", "Material UI"],
-    demoUrl: "https://meetmaps.com", // Update with actual URL
-    codeUrl: "", // Private repository
-    featured: true
-  },
-  {
-    id: "restaurant-pos",
-    title: "Restaurant POS System",
-    description: "Modern point-of-sale system for restaurants with real-time order tracking, inventory management, and sales analytics. Built with React and TypeScript for optimal performance.",
-    image: "/projects/restaurant-pos.jpg",
-    technologies: ["React", "TypeScript", "Material UI", "Node.js", "Socket.io"],
-    demoUrl: "", // Private system
-    codeUrl: "", // Private repository
-    featured: true
-  },
-  {
-    id: "logistics-marketplace",
-    title: "Logistics Marketplace",
-    description: "Platform connecting shippers with carriers, featuring real-time tracking and automated quote generation. Achieved 60% performance improvement through optimization.",
-    image: "/projects/logistics-marketplace.jpg", 
-    technologies: ["Vue.js", "JavaScript", "Vuex", "REST APIs", "Webpack"],
-    demoUrl: "", // Update with actual URL
-    codeUrl: "", // Private repository
-    featured: true
-  },
-  {
-    id: "ecommerce-platform",
-    title: "E-commerce Solutions",
-    description: "Custom e-commerce platform with product management, payment integration, and customer analytics. Built scalable solutions for multiple clients.",
-    image: "/projects/ecommerce.jpg",
-    technologies: ["Vue.js", "Node.js", "Express", "MongoDB", "Payment APIs"],
-    demoUrl: "",
-    codeUrl: "",
-    featured: false
-  },
-  {
-    id: "fintech-dashboard",
-    title: "FinTech Dashboard",
-    description: "Financial technology dashboard with real-time data visualization, transaction monitoring, and advanced reporting features.",
-    image: "/projects/fintech.jpg",
-    technologies: ["React", "D3.js", "Chart.js", "TypeScript", "WebSocket"],
-    demoUrl: "",
-    codeUrl: "",
-    featured: false
-  },
-  {
-    id: "healthcare-app",
-    title: "Healthcare Management App",
-    description: "Healthcare management application with patient records, appointment scheduling, and telemedicine capabilities.",
-    image: "/projects/healthcare.jpg",
-    technologies: ["React", "Redux", "Node.js", "PostgreSQL", "WebRTC"],
-    demoUrl: "",
-    codeUrl: "",
-    featured: false
-  }
+export const selectedWork: Project[] = [
+  { id: 'azure-foundations', number: '01', title: 'Enterprise Azure Foundations', category: 'CLOUD INFRASTRUCTURE', summary: 'Delivered Azure environment setup for Acorn, MIBI, Tek Voice, MFCU, and other client projects. Landing zones, private endpoints, DNS, and AI workloads deployed through reusable infrastructure as code.', challenge: 'Provide secure, private connectivity and repeatable deployment for enterprise application and AI workloads.', approach: 'Codify landing zones and networking with Bicep and Azure Verified Modules, then promote environments through Azure DevOps.', details: ['Established subscription and resource-group structures, governance, naming, and tagging standards.', 'Implemented VNets, subnets, private endpoints, and Private DNS zones.', 'Provisioned AI Foundry environments and Document Intelligence workloads.', 'Resolved SKU and region compatibility, cross-resource-group scoping, and private endpoint deployment issues.'], technologies: ['Azure', 'Bicep / AVM', 'Private networking', 'Azure DevOps'], accent: 'emerald' },
+  { id: 'chat-with-docs', number: '02', title: 'Chat with Docs', category: 'KNOWLEDGE & APPLIED AI', summary: 'Built a document-grounded AI proof of concept using Azure OpenAI, Document Intelligence, and AI Search, later extended into a production client solution.', challenge: 'Connect conversational AI with the information held in client documents.', approach: 'Combine document processing, search, and Azure OpenAI in a retrieval-augmented workflow.', details: ['Delivered the original Chat with Docs proof of concept.', 'Integrated Azure OpenAI, Azure Document Intelligence, and Azure Cognitive Search / AI Search.', 'The proof of concept was later extended into a production client solution.'], technologies: ['Azure OpenAI', 'RAG', 'AI Search', 'Document Intelligence'], accent: 'cyan' },
+  { id: 'epassport-pcf', number: '03', title: 'EPassport ERA & Custom PCF', category: 'ENTERPRISE APPLICATIONS', summary: 'Led EPassport ERA from requirements and user stories to delivery and client demos. Developed advanced PCF controls, including a five-level horse pedigree visualiser with React and TypeScript.', challenge: 'Translate business requirements into a usable enterprise application and represent complex relationship data inside Power Apps.', approach: 'Lead requirements and client demos alongside Dataverse application delivery and React / TypeScript PCF development.', details: ['Owned requirements gathering, user stories, development, and weekly client demos for EPassport ERA.', 'Developed a five-level horse pedigree visualiser using React Query.', 'Embedded advanced PCF controls in model-driven and canvas applications.'], technologies: ['Dataverse', 'Power Apps', 'React / TypeScript', 'PCF'], accent: 'coral' },
+  { id: 'sql-language', number: '04', title: 'SQL Queries in Plain Language', category: 'OPEN-SOURCE CONTRIBUTION', summary: 'A custom Dynamics 365 PCF control that converts SQL queries into natural language using a Hugging Face model, backed by FastAPI and Docker.', challenge: 'Make SQL query syntax understandable in natural language within Dynamics 365.', approach: 'Connect a React PCF control to a Hugging Face model through FastAPI, packaged with Docker.', details: ['Built the SQL Query to Sentence using Hugging Face contribution.', 'Implemented a custom Dynamics 365 PCF control with React.', 'Used FastAPI, Hugging Face, and Docker for the model-backed service.'], technologies: ['Hugging Face', 'FastAPI', 'PCF', 'Docker'], accent: 'blue' },
 ];

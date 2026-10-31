@@ -1,16 +1,21 @@
-import type { Metadata } from 'next';
-import { personalInfo } from '@/data/personal-info';
-import { ThemeProvider } from '@/components/providers/theme-provider';
+import type { Metadata, Viewport } from 'next';
+import { portfolioConfig } from '@/data/portfolioConfig';
+import { careerTimeline } from '@/data/experience';
+import { education } from '@/data/education';
+import { technologies } from '@/data/technologies';
 import { Analytics } from '@/components/analytics';
-import './globals.css';
+import './portfolio.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://faizanazhar.dev'),
+  metadataBase: portfolioConfig.siteUrl ? new URL(portfolioConfig.siteUrl) : undefined,
   title: {
-    default: 'Faizan Azhar - Azure, AI & Power Platform Consultant',
-    template: '%s | Faizan Azhar'
+    default: `${portfolioConfig.fullName} | Azure, AI & Power Platform Consultant`,
+    template: `%s | ${portfolioConfig.fullName}`
   },
-  description: personalInfo.summary,
+  description: portfolioConfig.summary,
+  alternates: { canonical: portfolioConfig.siteUrl },
+  icons: { icon: '/icon.svg' },
+  manifest: '/manifest.webmanifest',
   keywords: [
     'Full Stack Developer',
     'Azure Developer',
@@ -25,27 +30,29 @@ export const metadata: Metadata = {
     'Software Engineer',
     'Technical Consultant'
   ],
-  authors: [{ name: 'Faizan Azhar', url: 'https://faizanazhar.dev' }],
-  creator: 'Faizan Azhar',
+  authors: [{ name: portfolioConfig.fullName, url: portfolioConfig.siteUrl }],
+  creator: portfolioConfig.fullName,
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://faizanazhar.dev',
-    title: 'Faizan Azhar - Azure, AI & Power Platform Consultant',
-    description: personalInfo.summary,
-    siteName: 'Faizan Azhar Portfolio',
+    url: portfolioConfig.siteUrl,
+    title: `${portfolioConfig.fullName} | Azure, AI & Power Platform Consultant`,
+    description: portfolioConfig.summary,
+    siteName: `${portfolioConfig.fullName} Portfolio`,
     images: [
       {
-        url: '/faizanpic.jpg',
-        alt: 'Faizan Azhar - Senior Technical & Functional Consultant',
+        url: portfolioConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${portfolioConfig.fullName} - ${portfolioConfig.role}`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Faizan Azhar - Azure, AI & Power Platform Consultant',
-    description: personalInfo.summary,
-    images: ['/faizanpic.jpg'],
+    title: `${portfolioConfig.fullName} | Azure, AI & Power Platform Consultant`,
+    description: portfolioConfig.summary,
+    images: [portfolioConfig.ogImage],
   },
   robots: {
     index: true,
@@ -63,38 +70,26 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Faizan Azhar',
-  url: 'https://faizanazhar.dev',
-  image: 'https://faizanazhar.dev/faizanpic.jpg',
-  jobTitle: personalInfo.title,
+  name: portfolioConfig.fullName,
+  url: portfolioConfig.siteUrl,
+  jobTitle: portfolioConfig.role,
   worksFor: {
     '@type': 'Organization',
-    name: 'Tekenable Ltd'
+    name: careerTimeline.find((experience) => experience.current)?.company
   },
   alumniOf: {
     '@type': 'Organization',
-    name: 'Air University Islamabad'
+    name: education.university
   },
-  knowsAbout: [
-    'Full Stack Development',
-    'Azure Cloud Services',
-    'Artificial Intelligence',
-    'Machine Learning',
-    'React',
-    'Next.js',
-    'TypeScript',
-    'Python',
-    'Power Platform',
-    '.NET Core',
-    'Node.js'
-  ],
+  knowsAbout: technologies,
   sameAs: [
-    personalInfo.socialLinks.github,
-    personalInfo.socialLinks.linkedin
-  ],
-  telephone: '+923435391151',
-  email: personalInfo.email
+    portfolioConfig.socials.github,
+    portfolioConfig.socials.linkedin
+  ].filter((url): url is string => !!url),
+  email: portfolioConfig.email
 };
+
+export const viewport: Viewport = { themeColor: '#07110F', width: 'device-width', initialScale: 1 };
 
 export default function RootLayout({
   children,
@@ -114,16 +109,8 @@ export default function RootLayout({
         className="font-sans antialiased"
         suppressHydrationWarning={true}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-          storageKey="portfolio-theme"
-        >
-          {children}
-          <Analytics />
-        </ThemeProvider>
+        {children}
+        <Analytics />
       </body>
     </html>
   );

@@ -4,11 +4,12 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 
 ## 🚀 Features
 
-- **Modern Design**: Resume-led Azure, AI, and Power Platform portfolio with an interactive Three.js architecture scene
-- **Responsive**: Phone, tablet, and desktop layouts with stable canvas dimensions
+- **Modern Design**: Dark architectural consulting portfolio with an original interactive SVG/CSS system visual
+- **Responsive**: Phone, tablet, desktop, and ultra-wide layouts with stable visual dimensions
 - **SEO Optimized**: Built-in SEO best practices
 - **Performance**: Optimized for fast loading times
-- **Accessibility**: Keyboard navigation, skip link, reduced-motion support, and animation pause control
+- **Accessibility**: Focus-trapped native dialogs, restored focus, skip link, form errors, reduced motion, and animation pause control
+- **Case Studies**: Four factual projects with accessible delivery-detail dialogs
 - **Email Drafts**: Open a populated draft in the default mail app, Gmail, or Outlook on the web
 
 ## 🛠️ Tech Stack
@@ -16,28 +17,24 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 - **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **Animations**: Three.js, CSS, and Framer Motion
-- **Icons**: Lucide and React Icons
+- **Animations**: CSS and Framer Motion; no canvas or 3D runtime dependency
+- **Icons**: Named Lucide imports
 - **Deployment**: Vercel/Netlify ready
 
 ## 📁 Project Structure
 
 ```
-portfolio-website/
-├── public/
-│   └── resume/
-│       └── Faizan_Azhar_Resume.pdf
-            faizanpic.jpg
-├── src/
-│   ├── components/
-│   │   ├── layout/
-│   │   ├── sections/
-│   │   └── ui/
-│   ├── data/
-│   ├── pages/
-│   └── styles/
-├── package.json
-└── README.md
+public/
+   faizanpic.jpg
+   resume/                         Existing CV files, unchanged
+src/
+   app/                            Next.js routes, metadata, and portfolio.css
+   components/
+      portfolio/                    Typed interactive portfolio components
+      ui/ScrollHandler.tsx
+      analytics.tsx
+   data/                           Central configuration and factual section data
+   lib/email.ts                    Draft encoding and validation helpers
 ```
 
 ## 🚀 Getting Started
@@ -64,31 +61,32 @@ portfolio-website/
 
 ## 📝 Customization
 
-1. **Update Personal Information**: Edit `src/data/personal-info.ts`
-2. **Update Experience, Expertise, Projects, and Credentials**: Edit `src/components/sections/portfolio-content.tsx`
-3. **Update Hero and 3D Scene**: Edit `src/components/sections/hero-scene.tsx`
-4. **Update Contact Drafts**: Edit `src/components/sections/contact-draft.tsx`
-5. **Replace Resume**: Add your PDF to `public/resume/`
+1. **Personal Information and Production URL**: [src/data/portfolioConfig.ts](src/data/portfolioConfig.ts)
+2. **Experience and Projects**: [src/data/experience.ts](src/data/experience.ts), [src/data/projects.ts](src/data/projects.ts)
+3. **Expertise, Technologies, Credentials, and Education**: Their typed files under `src/data/`
+4. **Visuals and Interactions**: Components under `src/components/portfolio/`
+5. **Resume**: Update `resumeUrl` to the existing file; missing optional URLs hide their actions
 
 ## 🌐 Deployment
 
 
 
-### GitHub Pages
-1. Update `next.config.js` with your repository name
-2. Run `npm run build && npm run export`
-3. Deploy the `out` folder to GitHub Pages
+Use the existing Next.js deployment on Vercel or another Next.js-capable host.
+Run `npm run build` and `npm start` for production. The removed `next export`
+command is not supported by the current Next.js version.
+
+Stop the local preview before rebuilding: development and production processes
+must not write to the same `.next` directory concurrently.
 
 ## 📱 Social Links
 
-Update your social media links in `src/data/personal-info.ts`:
+Update your public social links in [src/data/portfolioConfig.ts](src/data/portfolioConfig.ts):
 - LinkedIn
 - GitHub
-- Twitter
 
 ## 📄 Resume
 
-Place your resume PDF file in `public/resume/` and update the filename in `personal-info.ts`.
+The existing consultant CV PDF is reused unchanged. Its path is configured centrally.
 
 ## 🎨 Styling
 
@@ -101,7 +99,7 @@ The project uses Tailwind CSS for styling with custom animations and effects:
 
 ## 📧 Contact Form
 
-The contact form opens a draft addressed to `personalInfo.email`, including the
+The contact form opens a draft addressed to `portfolioConfig.email`, including the
 visitor's name, reply email, subject, and message. It does not send mail or store
 form contents on a server. The visitor reviews and sends the draft themselves.
 
@@ -109,19 +107,22 @@ form contents on a server. The visitor reviews and sends the draft themselves.
 - Gmail and Outlook on the web open compose pages in a new tab; sign-in may be required.
 - Desktop Outlook is selected through the visitor's default mail-handler settings.
 - Fields stay populated after opening a draft, so the visitor can choose another app.
+- Fields start empty, show inline validation, and include a message counter and honeypot.
 
 The blog section, its navigation links, and blog routes have been removed.
+The previous simulated newsletter signup now redirects to Contact; it does not
+claim to subscribe users or use unsupported testimonials.
 
-## 3D Runtime
+## Motion Runtime
 
-Three.js 0.170.0 loads on the client from jsDelivr because npm registry access was
-blocked in the development environment. Manrope and JetBrains Mono load from
-Google Fonts with system fallbacks. These assets require network access; the
-portfolio content remains usable with fonts unavailable, and a static architecture
-fallback replaces the canvas if WebGL or the Three.js CDN cannot load.
+Architecture graphics are local SVG and CSS; no external visual runtime is loaded.
+Manrope and JetBrains Mono use two font files with system fallbacks. High-frequency
+pointer effects use MotionValues rather than React state. Touch and reduced-motion
+users get nonessential pointer effects disabled. The hero includes a pause control,
+and both marquee rows pause on hover or reduced-motion preference.
 
-The scene caps pixel density, avoids animation when reduced motion is requested,
-and pauses rendering when offscreen or the tab is hidden. A pause control is also provided.
+See [REDESIGN_REPORT.md](REDESIGN_REPORT.md) for the complete change inventory,
+verification results, accessibility notes, and remaining manual checks.
 
 ## 🔧 Scripts
 
@@ -129,11 +130,6 @@ and pauses rendering when offscreen or the tab is hidden. A pause control is als
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
-- `npm run export` - Export static files
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
@@ -143,8 +139,7 @@ Contributions, issues, and feature requests are welcome!
 
 If you need help customizing this portfolio, feel free to reach out:
 - Email: faizanazhar1@gmail.com
-- LinkedIn: [Your LinkedIn Profile]
-- GitHub: [Your GitHub Profile]
+- Public social profiles are configured in [src/data/portfolioConfig.ts](src/data/portfolioConfig.ts).
 
 ---
 

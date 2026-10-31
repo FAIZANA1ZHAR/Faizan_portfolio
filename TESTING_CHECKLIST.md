@@ -1,5 +1,14 @@
 # Portfolio Testing Checklist 🚀
 
+## Current Architectural Redesign
+
+The current implementation and verification record are in
+[REDESIGN_REPORT.md](REDESIGN_REPORT.md). That report supersedes the historical
+entries below. The portfolio now uses typed section data, local SVG/CSS visuals,
+native project and navigation dialogs, and validated client-side email drafts.
+
+No runtime test values are persisted. No emails were sent during testing.
+
 ## October 2026 Redesign
 
 This section supersedes the historical checklist below. The homepage now uses

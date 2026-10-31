@@ -75,6 +75,12 @@ Use the existing Next.js deployment on Vercel or another Next.js-capable host.
 Run `npm run build` and `npm start` for production. The removed `next export`
 command is not supported by the current Next.js version.
 
+Vercel blocks deployments that use vulnerable Next.js releases. Keep Next.js
+and `@next/third-parties` at 15.5.28 or newer patched Next.js 15 releases, and
+commit both `package.json` and `package-lock.json` after dependency updates.
+If a deployment reports "Vulnerable version of Next.js detected", deploy the
+updated commit without reusing the existing build cache.
+
 Stop the local preview before rebuilding: development and production processes
 must not write to the same `.next` directory concurrently.
 

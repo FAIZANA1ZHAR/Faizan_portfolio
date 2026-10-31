@@ -39,10 +39,10 @@ export default function NewsletterPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              href="/blog"
+              href="/#projects"
               className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
             >
-              Read Latest Articles
+              Explore Selected Work
             </Link>
             <Link 
               href="/"

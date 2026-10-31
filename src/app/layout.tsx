@@ -1,28 +1,16 @@
 import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { personalInfo } from '@/data/personal-info';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { Analytics } from '@/components/analytics';
 import './globals.css';
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const jetbrainsMono = JetBrains_Mono({ 
-  subsets: ['latin'],
-  variable: '--font-mono',
-  display: 'swap',
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://faizanazhar.dev'),
   title: {
-    default: 'Faizan Azhar - Senior Full Stack Developer & AI Engineer',
+    default: 'Faizan Azhar - Azure, AI & Power Platform Consultant',
     template: '%s | Faizan Azhar'
   },
-  description: 'Senior Full Stack Developer specializing in Azure, AI solutions, and modern web technologies. Expert in React, Next.js, .NET, Python, and Power Platform with Microsoft certifications.',
+  description: personalInfo.summary,
   keywords: [
     'Full Stack Developer',
     'Azure Developer',
@@ -43,23 +31,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://faizanazhar.dev',
-    title: 'Faizan Azhar - Senior Full Stack Developer & AI Engineer',
-    description: 'Senior Full Stack Developer specializing in Azure, AI solutions, and modern web technologies.',
+    title: 'Faizan Azhar - Azure, AI & Power Platform Consultant',
+    description: personalInfo.summary,
     siteName: 'Faizan Azhar Portfolio',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Faizan Azhar - Senior Full Stack Developer',
+        url: '/faizanpic.jpg',
+        alt: 'Faizan Azhar - Senior Technical & Functional Consultant',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Faizan Azhar - Senior Full Stack Developer & AI Engineer',
-    description: 'Senior Full Stack Developer specializing in Azure, AI solutions, and modern web technologies.',
-    images: ['/og-image.jpg'],
+    title: 'Faizan Azhar - Azure, AI & Power Platform Consultant',
+    description: personalInfo.summary,
+    images: ['/faizanpic.jpg'],
   },
   robots: {
     index: true,
@@ -72,9 +58,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
 };
 
 const jsonLd = {
@@ -83,7 +66,7 @@ const jsonLd = {
   name: 'Faizan Azhar',
   url: 'https://faizanazhar.dev',
   image: 'https://faizanazhar.dev/faizanpic.jpg',
-  jobTitle: 'Senior Full Stack Developer & Technical Consultant',
+  jobTitle: personalInfo.title,
   worksFor: {
     '@type': 'Organization',
     name: 'Tekenable Ltd'
@@ -106,11 +89,11 @@ const jsonLd = {
     'Node.js'
   ],
   sameAs: [
-    'https://github.com/faizanazhar',
-    'https://linkedin.com/in/faizanazhar'
+    personalInfo.socialLinks.github,
+    personalInfo.socialLinks.linkedin
   ],
   telephone: '+923435391151',
-  email: 'faziazhar1@gmail.com'
+  email: personalInfo.email
 };
 
 export default function RootLayout({
@@ -119,32 +102,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const theme = localStorage.getItem('portfolio-theme') || 'dark';
-                document.documentElement.classList.toggle('dark', theme === 'dark');
-              } catch (e) {
-                document.documentElement.classList.add('dark');
-              }
-            `,
-          }}
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body 
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        className="font-sans antialiased"
         suppressHydrationWarning={true}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
           storageKey="portfolio-theme"

@@ -3,7 +3,7 @@ import Link from 'next/link';
 export function BackButton() {
   return (
     <Link 
-      href="/blog"
+      href="/"
       className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
     >
       <svg 
@@ -14,7 +14,7 @@ export function BackButton() {
       >
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
       </svg>
-      ← Back to Blog
+      Back to Portfolio
     </Link>
   );
 }

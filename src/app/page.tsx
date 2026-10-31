@@ -1,39 +1,27 @@
 import { Metadata } from 'next';
 import Header from '@/components/layout/header';
-import Hero from '@/components/sections/hero';
-import VideoIntroduction from '@/components/sections/video-introduction';
-import About from '@/components/sections/about';
-import { TechStack } from '@/components/sections/tech-stack';
-import Experience from '@/components/sections/experience';
-import Projects from '@/components/sections/projects';
-import { Certifications } from '@/components/sections/certifications';
-import Contact from '@/components/sections/contact';
-import Footer from '@/components/layout/footer';
-import BlogPreview from '@/components/sections/blog-preview';
+import HeroScene from '@/components/sections/hero-scene';
+import PortfolioContent, { PortfolioFooter } from '@/components/sections/portfolio-content';
+import Contact from '@/components/sections/contact-draft';
 import { ScrollHandler } from '@/components/ui/ScrollHandler';
 
 export const metadata: Metadata = {
-  title: 'Home',
-  description: 'Senior Full Stack Developer specializing in Azure, AI solutions, and modern web technologies. View my projects, experience, and certifications.',
+  title: 'Azure, AI & Power Platform Consultant',
+  description: 'Faizan Azhar, Senior Technical & Functional Consultant. 6+ years delivering enterprise Azure infrastructure, applied AI, and Microsoft Power Platform solutions.',
 };
 
 export default function Home() {
   return (
     <>
       <ScrollHandler />
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <Header />
-      <main className="min-h-screen">
-        <Hero />
-        <VideoIntroduction />
-        <About />
-        <TechStack />
-        <Experience />
-        <Projects />
-        <Certifications />
-        <BlogPreview />
+      <main id="main-content" className="portfolio-main">
+        <HeroScene />
+        <PortfolioContent />
         <Contact />
       </main>
-      <Footer />
+      <PortfolioFooter />
     </>
   );
 }

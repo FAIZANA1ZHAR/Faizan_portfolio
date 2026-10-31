@@ -1,56 +1,143 @@
 FAIZAN AZHAR
-+923435391151 | faziazhar1@gmail.com | GitHub:https://github.com/FAIZANA1ZHAR | https://www.linkedin.com/in/faizan-azhar-25a49b149/
-PROFILE
-I am a dedicated software developer who loves creating high-quality products in competitive environments. I'm committed
-to innovation and always seeking new challenges and opportunities.
-EXPERIENCE
-Senior Software Engineer (Full Stack) & Technical Consultant - Tekenable ltd Remote, Ireland Feb 2022 - Present
-• Successfully delivered and led the development and support for EPassport ERA: Understanding the requirements
-from the client, creating user stories, and presenting weekly demos of the product to clients.
-• Develop and manage Power Apps solutions pipelines for different environments
-• Develop custom connectors in C# for Power Apps
-• Develop the media stream service for ERA.
-• Develop the third-party endpoints for media broadcasting for France and the UK.
-• Develop a horse pedigree for 5 levels using PCF in React with React Query.
-• Deploy CI/CD pipelines for Azure Functions and PCF
-• Develop a POC (chat with docs ) that leads to a successful client
-(Azure Open AI, Azure Document Intelligence, Azure Cognitive Search, React, Fast Api,.Net,.NetCore, Python, Angular,
-Power Apps, React, Azure, DevOps, Docker)
-Full-Stack Developer - AlphaSquad Onsite, Islamabad Jan 2020 - Sep 2020
-Developed and deployed a major Online Education System for a Saudi client project. Worked with modern technologies.
-(Node.js, React, React Native, Serverless, GraphQL, Firebase)
-Full-Stack Developer – Code Breakers Remote, USA Oct 2020 – Jan 2022
-• Develop the online hotel management system.
-• Develop the online taxi system.
-(Node.js, React, React Native, Google Maps, Firebase)
++923435391151 | faizanazhar1@gmail.com | 
+Professional Profile
+GitHub | 
+LinkedIn | 
+Profile
+Senior Technical & Functional Consultant with 6+ years of experience delivering
+enterprise solutions on Microsoft Power Platform, Azure and AI. Combines three
+strengths: (1) Power Platform delivery (Model-Driven Apps, Canvas Apps, Power Pages,
+Power Automate, PCF, Copilot Studio); (2) Azure cloud and infrastructure engineering,
+including landing zones, private networking, DNS, Azure AI Foundry environments and
+secure CI/CD; and (3) applied AI engineering (RAG pipelines, multi-agent systems, LLM
+powered applications). Trusted to take a solution from requirements and architecture
+through to a secured, production-ready Azure deployment. PL-200, AI-102 and DP-100
+certified.
+Core Competencies
+Azure Infrastructure & Networking: Landing zone design, hub-and-spoke VNets,
+private endpoints, Private DNS zones, subnet and NSG design, multi-region
+deployment
+Infrastructure as Code: Bicep and Azure Verified Modules (AVM), Azure DevOps
+YAML pipelines, service connections, multi-environment promotion
+Azure AI Platform: Azure AI Foundry (projects, agents, model deployments), Azure
+OpenAI, Azure AI Document Intelligence, Content Understanding, Azure AI Search
+DevSecOps: Company-standard security analysis pipelines with SonarQube and Mend
+scanning, secure build and release pipelines for .NET, Azure Functions and PCF
+Power Platform: Model-Driven and Canvas Apps, Power Pages, Power Automate,
+Dataverse, Copilot Studio, PCF controls (React/TypeScript), ALM and solution
+pipelines
+AI Engineering: RAG, KAG, graph-based AI, multi-agent systems (LangChain,
+LangGraph, Azure Agentic Framework), KV-cache optimised agent architectures
+Development: Python (FastAPI, Django, Flask), .NET/C#, React, TypeScript, Vite,
+Angular, Docker
+Page 1 of 5
+Faizan Azhar – CV (Azure & AI Consultant)
+Professional Experience
+Senior Technical & Functional Consultant (Azure, AI & Power Platform) 
+Tekenable Ltd
+Remote, Ireland | Feb 2022 – Present
+Azure Infrastructure & Security (Acorn, MIBI, Tek Voice, MFCU and other client
+projects)
+Designed and built the Azure infrastructure for the majority of the company's client
+projects, delivering the complete environment setup from landing zone through to
+application and AI workloads, including Acorn, MIBI, Tek Voice and MFCU.
+Established Azure landing zones with subscription and resource group structure,
+governance, and consistent naming and tagging standards.
+Designed and implemented network architecture: virtual networks and subnets,
+private endpoints, and Private DNS zones for secure, private connectivity to PaaS and
+AI services.
+Provisioned and configured Azure AI Foundry environments, including projects, agents
+and model deployments, together with Azure AI Document Intelligence for document
+processing workloads.
+Codified infrastructure as reusable, repeatable IaC using Bicep and Azure Verified
+Modules (AVM), deployed through Azure DevOps across multi-region (North Europe /
+Sweden Central) production environments; resolved complex deployment issues
+involving SKU/region compatibility, cross-resource-group scoping and private endpoint
+configuration.
+Built and rolled out a company-standard Azure DevOps YAML security analysis
+pipeline integrating SonarQube and Mend scanning with .NET builds, raising the
+security baseline across projects.
+Configured Azure DevOps service connections and least-privilege access for IaC
+pipelines within Entra ID permission constraints.
+Implemented CI/CD pipelines for Azure Functions and PCF components, improving
+deployment speed and reliability.
+AI Solutions
+Delivered the "Chat with Docs" POC using Azure OpenAI, Azure Document
+Intelligence and Azure Cognitive Search, later extended into a production client
+solution.
+Page 2 of 5
+Faizan Azhar – CV (Azure & AI Consultant)
+Designed and deployed enterprise chatbots and AI agents in Microsoft Copilot Studio
+with multi-turn flows, topic-based routing and generative answers grounded in
+SharePoint and Dataverse via Azure OpenAI; extended agents with Power Automate
+actions and Azure Function plugins to perform real-time lookups and surface Dynamics
+365 records across Teams and web channels.
+Built POCs using Retrieval-Augmented Generation (RAG), Knowledge-Augmented
+Generation (KAG) and graph-based AI for advanced contextual reasoning.
+Designed multi-agent systems with Azure Agentic Framework, LangChain and
+LangGraph, and optimised memory-efficient agentic architectures using KV cache.
+Power Platform & Application Delivery
+Led end-to-end delivery of EPassport ERA: requirements gathering, user stories,
+development and weekly client demos.
+Architected Model-Driven Apps on Dynamics 365 / Dataverse, including custom tables,
+business rules, forms, views, dashboards and role-based security.
+Developed advanced PCF controls using React and TypeScript, including a five-level
+horse pedigree visualiser (React Query) embedded in model-driven and canvas apps.
+Built Canvas Apps connected to Dataverse, SharePoint and custom REST APIs;
+delivered Power Pages portals with Liquid templates, web roles and entity
+permissions.
+Engineered Power Automate flows (cloud, scheduled, instant) for approvals,
+notifications and data synchronisation across Dataverse, SharePoint, Teams and third
+party services.
+Built custom C# connectors and Azure Functions (.NET and Python) as serverless
+middleware and webhook handlers, including integration with on-premises systems via
+the On-Premises Data Gateway.
+Engineered a media streaming service and third-party broadcasting endpoints for
+France and the UK.
+Managed ALM across environments using solution layers, environment variables and
+automated Azure DevOps pipelines.
+Served as Functional Consultant: led discovery workshops, translated business
+requirements into Power Platform solutions and provided functional guidance
+throughout the delivery lifecycle.
+Technologies: Azure (Landing Zones, VNet, Private DNS, Private Endpoints, AI Foundry,
+OpenAI, Document Intelligence, AI Search, Functions, Key Vault), Bicep, AVM, Azure
+DevOps, SonarQube, Mend, Copilot Studio, Power Apps, Power Automate, Power Pages,
+Page 3 of 5
+Faizan Azhar – CV (Azure & AI Consultant)
+PCF, Dataverse, Python, .NET, React, Docker
+Full-Stack Developer – Code Breakers
+Remote, USA | Oct 2020 – Jan 2022
+Built an online hotel management system with real-time booking, room inventory and
+payment integration.
+Developed an online taxi dispatch system with live GPS tracking, driver–passenger
+matching and Google Maps integration.
+Technologies: Node.js, React, React Native, Google Maps, Firebase
+Full-Stack Developer – AlphaSquad
+Onsite, Islamabad | Jan 2020 – Sep 2020
+Designed and deployed a full-scale Online Education System for a Saudi client covering
+course management, live sessions and authentication, using a serverless architecture.
+Technologies: Node.js, React, React Native, Serverless, GraphQL, Firebase
+Certifications
+PL-200: Microsoft Power Platform Functional Consultant (Oct 2025)
+DP-100: Azure Data Scientist Associate (Jan 2025)
+AI-102: Designing and Implementing a Microsoft Azure AI Solution (Jun 2023)
+AI-900: Microsoft Azure AI Fundamentals (Jul 2023)
+PL-900: Microsoft Power Platform Fundamentals (Aug 2023)
+AZ-900: Microsoft Azure Fundamentals (Jul 2023)
 Open-Source Contribution
-SQL Query Conversion to Sentence using Hugging Face
-Built a custom control for Dynamics 365 that converts SQL queries into natural language using the Hugging Face model.
-(Dynamics 365 Pcf Control React, FastAPI, Hugging Face, Docker).
-CERTIFICATIONS
-PL-200: Power Platform Functional Consultant Associate - Microsoft (Oct 2025 -Oct -2026)
-DP-100: Azure Data Scientist Associate – Microsoft (Jan 2025 – Present)
-AI-102: Designing and Implementing a Microsoft Azure AI Solution – Microsoft (Jun 2023 – Present)
-AI-900: Microsoft Azure AI Fundamentals – Microsoft (Jul 2023 – Present)
-PL-900: Microsoft Power Platform Fundamentals – Microsoft (Aug 2023 – Present) AZ-900: Microsoft Azure Fundamentals – Microsoft (Jul 2023 – Present)
-Internship
-National Centre for Cyber Security, Air University, Islamabad May 2020 – Jul 2020
-Analyzed malware using IDA Pro and Ghidra to examine and understand malicious executable files.
-(IDA Pro, Ghidra, Malware Analysis)
-Machine Learning – Air University Center of Smart Data Islamabad Sep 2019 – Jul 2020
-Trained machine learning models to identify drug-drug interactions (DDIs) in biomedical texts. Achieved an F1-score of 73%,
-comparable to leading research in the domain.
-(Python, ML, NLP)
-EDUCATION
-Air University Islamabad. 2017 – 2020
-Bachelor of Engineering in Software Engineering CGPA: 3.01
-Final Year Project
-Telecommute Churn Prediction Model Islamabad4 Jan 2020
-• Developed using Python and Django with 95% accuracy in predicting churn. Designed the front-end interface using HTML
-and CSS. (Python, Django, HTML, CSS)
-Academic Projects
-• Built a scientific calculator in C++.
-• Developed an eBay web scraper using C#.
-• Created Handy Crew and Hotel Management System using the MEAN stack.
-• Implemented a heart attack prediction model in Python. Created a customer churn prediction model in Python.
-• Twitter (X) Sentiment analysis R
+SQL Query to Sentence using Hugging Face: custom Dynamics 365 PCF control that
+converts SQL queries into natural language using a Hugging Face model (React, FastAPI,
+Hugging Face, Docker).
+Page 4 of 5
+Faizan Azhar – CV (Azure & AI Consultant)
+Education
+Bachelor of Engineering in Software Engineering, Air University, Islamabad | 2017 – 2020 |
+CGPA 3.01
+Final Year Project: Telecommute Churn Prediction Model (Python, Django), 95%
+accuracy.
+Internships & Research
+National Centre for Cyber Security, Air University (May – Jul 2020): malware analysis
+using IDA Pro and Ghidra.
+Air University Center of Smart Data (Sep 2019 – Jul 2020): trained ML models to
+identify drug–drug interactions in biomedical text, achieving an F1-score of 73%,
+comparable to leading research

@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
@@ -11,6 +12,18 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    function handleKey(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+        document.querySelector<HTMLButtonElement>('[aria-controls="mobile-navigation"]')?.focus();
+      }
+    }
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [isMenuOpen]);
 
   const handleNavigation = (href: string) => {
     if (href.startsWith('#')) {
@@ -38,12 +51,11 @@ const Header: React.FC = () => {
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#tech-stack' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '#contact' }
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50 dark:bg-gray-900/95 border-b border-gray-200/20 dark:border-gray-700/20">
+    <header className="portfolio-header fixed top-0 w-full backdrop-blur-md z-50">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
         <div className="flex justify-between items-center">
           {/* Logo/Name */}
@@ -52,7 +64,7 @@ const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <div className="hidden lg:flex items-center gap-2">
             {navItems.map((item) => (
               <button
                 key={item.name}
@@ -62,7 +74,7 @@ const Header: React.FC = () => {
                 {item.name}
               </button>
             ))}
-            <SocialLinks className="flex items-center gap-2 ml-4" size="sm" />
+            <a href="/#contact" className="header-contact">Let&apos;s talk</a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,22 +83,20 @@ const Header: React.FC = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle Menu"
             aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
-            <div className="w-6 h-6 flex flex-col justify-center relative">
-              <span className={`block h-0.5 w-6 bg-gray-600 dark:bg-gray-300 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-0' : 'translate-y-[-6px]'}`} />
-              <span className={`block h-0.5 w-6 bg-gray-600 dark:bg-gray-300 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
-              <span className={`block h-0.5 w-6 bg-gray-600 dark:bg-gray-300 transition-all duration-300 ${isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-[6px]'}`} />
-            </div>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden mt-4 pb-6 border-t border-gray-200 dark:border-gray-700 pt-4"
+            className="lg:hidden mt-4 pb-6 border-t border-gray-200 dark:border-gray-700 pt-4 mobile-navigation"
           >
             <div className="space-y-1">
               {navItems.map((item) => (

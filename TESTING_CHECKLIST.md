@@ -1,5 +1,28 @@
 # Portfolio Testing Checklist 🚀
 
+## October 2026 Redesign
+
+This section supersedes the historical checklist below. The homepage now uses
+`hero-scene.tsx`, `portfolio-content.tsx`, and `contact-draft.tsx`.
+
+- [x] Updated identity, experience, expertise, work, and credentials from the supplied CV.
+- [x] Updated recipient to `faizanazhar1@gmail.com` and linked the consultant CV PDF.
+- [x] Removed blog navigation, preview, and routes; `/blog/` returns 404.
+- [x] Production build, lint, and TypeScript validation passed.
+- [x] No horizontal overflow at 320, 375, 390, 768, 1024, 1440, 1920, and 2560px.
+- [x] Mobile navigation opens, closes on selection, and closes on Escape.
+- [x] Three.js canvas renders nonblank pixels and animates in a desktop browser.
+- [x] Desktop and mobile screenshots checked; canvas is nonblank and framed without clipping.
+- [x] Pause control and reduced-motion preference freeze animation.
+- [x] Blocking the CDN activates the static architecture fallback.
+- [x] Gmail and Outlook drafts preserve recipient, subject, message, and special characters.
+- [x] Native mail, Gmail, and Outlook submit handlers pass encoded-field tests without sending mail.
+- [ ] Verify native `mailto:` handoff on a device with Outlook or another default mail handler.
+- [ ] Verify Gmail and Outlook draft preservation after sign-in with real accounts.
+
+No emails were sent during automated testing. Network-blocked assets must fall
+back gracefully; native mail handoff depends on the visitor's OS configuration.
+
 ## ✅ Updates Completed
 
 ### 📧 Email & Profile Links

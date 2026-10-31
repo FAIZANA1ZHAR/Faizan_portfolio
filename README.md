@@ -4,20 +4,20 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 
 ## 🚀 Features
 
-- **Modern Design**: Clean, professional UI with smooth animations
-- **Responsive**: Works perfectly on all devices
+- **Modern Design**: Resume-led Azure, AI, and Power Platform portfolio with an interactive Three.js architecture scene
+- **Responsive**: Phone, tablet, and desktop layouts with stable canvas dimensions
 - **SEO Optimized**: Built-in SEO best practices
 - **Performance**: Optimized for fast loading times
-- **Accessibility**: WCAG compliant
-- **Dark Mode Ready**: Easy to implement dark mode support
+- **Accessibility**: Keyboard navigation, skip link, reduced-motion support, and animation pause control
+- **Email Drafts**: Open a populated draft in the default mail app, Gmail, or Outlook on the web
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 13
+- **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Icons**: React Icons
+- **Animations**: Three.js, CSS, and Framer Motion
+- **Icons**: Lucide and React Icons
 - **Deployment**: Vercel/Netlify ready
 
 ## 📁 Project Structure
@@ -65,9 +65,9 @@ portfolio-website/
 ## 📝 Customization
 
 1. **Update Personal Information**: Edit `src/data/personal-info.ts`
-2. **Add Experience**: Update `src/data/experience.ts`
-3. **Update Skills**: Modify `src/data/skills.ts`
-4. **Add Projects**: Update `src/data/projects.ts`
+2. **Update Experience, Expertise, Projects, and Credentials**: Edit `src/components/sections/portfolio-content.tsx`
+3. **Update Hero and 3D Scene**: Edit `src/components/sections/hero-scene.tsx`
+4. **Update Contact Drafts**: Edit `src/components/sections/contact-draft.tsx`
 5. **Replace Resume**: Add your PDF to `public/resume/`
 
 ## 🌐 Deployment
@@ -101,11 +101,27 @@ The project uses Tailwind CSS for styling with custom animations and effects:
 
 ## 📧 Contact Form
 
-The contact form is ready to integrate with:
-- EmailJS
-- Formspree
-- Netlify Forms
-- Custom API endpoints
+The contact form opens a draft addressed to `personalInfo.email`, including the
+visitor's name, reply email, subject, and message. It does not send mail or store
+form contents on a server. The visitor reviews and sends the draft themselves.
+
+- Default email app uses `mailto:` and requires an OS/browser mail handler.
+- Gmail and Outlook on the web open compose pages in a new tab; sign-in may be required.
+- Desktop Outlook is selected through the visitor's default mail-handler settings.
+- Fields stay populated after opening a draft, so the visitor can choose another app.
+
+The blog section, its navigation links, and blog routes have been removed.
+
+## 3D Runtime
+
+Three.js 0.170.0 loads on the client from jsDelivr because npm registry access was
+blocked in the development environment. Manrope and JetBrains Mono load from
+Google Fonts with system fallbacks. These assets require network access; the
+portfolio content remains usable with fonts unavailable, and a static architecture
+fallback replaces the canvas if WebGL or the Three.js CDN cannot load.
+
+The scene caps pixel density, avoids animation when reduced motion is requested,
+and pauses rendering when offscreen or the tab is hidden. A pause control is also provided.
 
 ## 🔧 Scripts
 
@@ -126,7 +142,7 @@ Contributions, issues, and feature requests are welcome!
 ## 📞 Support
 
 If you need help customizing this portfolio, feel free to reach out:
-- Email: faizanazhar1995@gmail.com
+- Email: faizanazhar1@gmail.com
 - LinkedIn: [Your LinkedIn Profile]
 - GitHub: [Your GitHub Profile]
 
